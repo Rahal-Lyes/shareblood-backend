@@ -17,12 +17,21 @@ def register(request):
         }, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['POST'])
 def login(request):
     username = request.data.get('username')
     password = request.data.get('password')
 
+    # Vérifie que les deux champs sont bien fournis
+    if not username or not password:
+        return Response(
+            {'message': 'Le nom d’utilisateur et le mot de passe sont requis.'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
     user = authenticate(username=username, password=password)
+
     if user:
         refresh = RefreshToken.for_user(user)
         return Response({
@@ -30,4 +39,9 @@ def login(request):
             'refresh': str(refresh),
             'access': str(refresh.access_token),
         })
-    return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+    else:
+        # ⚠️ Ici on retourne un message d’erreur exploitable côté frontend
+        return Response(
+            {'message': 'Nom d’utilisateur ou mot de passe incorrect.'},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
