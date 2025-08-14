@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import RegexValidator
-
+from datetime import date
 BLOOD_TYPE_CHOICES = [
     ('A+', 'A+'),
     ('A-', 'A-'),
@@ -20,7 +20,7 @@ phone_regex = RegexValidator(
 class CustomUser(AbstractUser):
     # Champs supplémentaires
     phone_number = models.CharField(validators=[phone_regex], max_length=15, blank=False, unique=True)
-    birth_date = models.DateField(null=False, blank=False,)
+    birth_date = models.DateField(default=date(2000, 1, 1)) 
     is_donor = models.BooleanField(default=False)
     blood_type = models.CharField(max_length=3, choices=BLOOD_TYPE_CHOICES, blank=True)
     wilaya = models.CharField(max_length=200)
