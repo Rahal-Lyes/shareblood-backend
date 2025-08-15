@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-*6tzi=0l(!-raqs0m9$c(oq1d-9qup8ncizd#$r!17q929_8-3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+# In production, replace the below with your actual domain(s) or IP(s), e.g. ['yourdomain.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 
@@ -127,7 +128,7 @@ DATABASES = {
         },
     }
 }
-
+DATABASES['default']=dj_database_url.parse("postgresql://shareblood_user:x8CPNgTmWTqh2Z1wU2oPwJBsFHD3kZRW@dpg-d2fm55qdbo4c73bed6lg-a.oregon-postgres.render.com/shareblood")
 
 
 # Password validation
