@@ -132,7 +132,7 @@ DATABASES['default']=dj_database_url.parse("postgresql://shareblood_user:x8CPNgT
 #     }
 # }
 
->>>>>>> 4ccac3214a6cd8d0598ddba755700a9c7cf9d530
+
 
 
 # Password validation
