@@ -113,9 +113,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-<<<<<<< HEAD
+
 DATABASES['default']=dj_database_url.parse("postgresql://shareblood_user:x8CPNgTmWTqh2Z1wU2oPwJBsFHD3kZRW@dpg-d2fm55qdbo4c73bed6lg-a.oregon-postgres.render.com/shareblood")
-=======
+
 
 # DATABASES = {
 #     'default': {
