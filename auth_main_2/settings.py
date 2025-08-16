@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*6tzi=0l(!-raqs0m9$c(oq1d-9qup8ncizd#$r!17q929_8-3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # In production, replace the below with your actual domain(s) or IP(s), e.g. ['yourdomain.com']
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','.vercel.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','.vercel.app','.now.sh']
 
 
 
@@ -104,16 +104,16 @@ WSGI_APPLICATION = 'auth_main_2.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'shareblood',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'vFFrnHDFqlfHtAbNUnwveREOqCNmGeOT',
+        'HOST': 'shinkansen.proxy.rlwy.net',
+        'PORT': '44818',
+    }
+}
 
 # DATABASES['default']=dj_database_url.parse("postgresql://shareblood_user:x8CPNgTmWTqh2Z1wU2oPwJBsFHD3kZRW@dpg-d2fm55qdbo4c73bed6lg-a.oregon-postgres.render.com/shareblood")
 
@@ -135,13 +135,7 @@ WSGI_APPLICATION = 'auth_main_2.wsgi.application'
 
 
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default="postgresql://shareblood_user:x8CPNgTmWTqh2Z1wU2oPwJBsFHD3kZRW@dpg-d2fm55qdbo4c73bed6lg-a.oregon-postgres.render.com/shareblood?sslmode=require",
-        conn_max_age=0,
-        ssl_require=True
-    )
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
