@@ -109,9 +109,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'vFFrnHDFqlfHtAbNUnwveREOqCNmGeOT',
-        'HOST': 'shinkansen.proxy.rlwy.net',
-        'PORT': '44818',
+        'PASSWORD': 'NiFnQSzFzhOgAxfuYDVGABrxtYMYHshr',
+        'HOST': 'shortline.proxy.rlwy.net',
+        'PORT': '28146',
     }
 }
 
@@ -174,7 +174,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS_ALLOW_ALL_ORIGINS = True  
-CORS_ALLOWED_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
