@@ -104,31 +104,31 @@ WSGI_APPLICATION = 'auth_main_2.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'vFFrnHDFqlfHtAbNUnwveREOqCNmGeOT',
-#         'HOST': 'shinkansen.proxy.rlwy.net',
-#         'PORT': '44818',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'vFFrnHDFqlfHtAbNUnwveREOqCNmGeOT',
+        'HOST': 'shinkansen.proxy.rlwy.net',
+        'PORT': '44818',
+    }
+}
 
 # DATABASES['default']=dj_database_url.parse("postgresql://shareblood_user:x8CPNgTmWTqh2Z1wU2oPwJBsFHD3kZRW@dpg-d2fm55qdbo4c73bed6lg-a.oregon-postgres.render.com/shareblood")
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shareblood',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'shareblood',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
       
-    }
-}
+#     }
+# }
 
 
 
