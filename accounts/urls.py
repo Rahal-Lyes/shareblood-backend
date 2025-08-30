@@ -9,3 +9,5 @@ urlpatterns = [
     path('', views.UserListCreateView.as_view(), name='account-list'),
     path("stats/bloodtype/",views.donors_by_bloodtype, name="donors_by_bloodtype"),
 ] 
+
+# DkNu1rjS.VlTfYMGszW6265ZfzrIwmPpCZjNNdafQ

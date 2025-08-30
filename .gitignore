@@ -1,2 +1,5 @@
 venv/
 db.sqlite3
+api.http
+__pycache__/
+datadump.json

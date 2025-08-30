@@ -9,9 +9,10 @@ from .pagination import CustomPagination
 from django.db.models import Count
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from rest_framework_api_key.permissions import HasAPIKey
 
 class RegisterView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes=[HasAPIKey]
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
     lookup_field='id'
