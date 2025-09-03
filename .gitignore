@@ -42,3 +42,5 @@ node_modules/
 
 # Build
 build/
+datadumps.json/
+shop_ecommerce.drawio/
