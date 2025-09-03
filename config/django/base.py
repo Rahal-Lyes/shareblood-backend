@@ -27,11 +27,11 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'accounts',
-    'header_configs',
     'agenda',
-    'pdf',
     'django_model_info.apps.DjangoModelInfoConfig',
-     "rest_framework_api_key",
+     'rest_framework_api_key',
+     'shop'
+
   
     
 ]
@@ -124,7 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS_ALLOW_ALL_ORIGINS = True  
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = env.bool('CORS_ALLOWED',default=False)
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
@@ -133,3 +133,9 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": True,
 }
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+
+# Où stocker les fichiers uploadés
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
